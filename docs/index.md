@@ -7,27 +7,38 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+description: "Odoo en AWS."
 ---
 
-# Prerequisites
+# Prerrequisitos
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$.
+## Amazon Web Service
 
-The **bookdown** package can be installed from CRAN or Github:
+### Crear y activar una cuenta AWS
+https://aws.amazon.com/es/premiumsupport/knowledge-center/create-and-activate-aws-account/
+
+### Lanzar servidor AWS EC2 con Ubuntu 16.04
+https://mobisoftinfotech.com/resources/mguide/launch-aws-ec2-server-set-ubuntu-16-04/
+
+### Conexión a la instancia
+
+**Información de la instancia**
+https://docs.aws.amazon.com/es_es/AWSEC2/latest/UserGuide/connection-prereqs.html#connection-prereqs-get-info-about-instance
+
+**Conexión a la instancia de Linux mediante un cliente SSH**
+https://docs.aws.amazon.com/es_es/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html#AccessingInstancesLinuxSSHClient
 
 
 ```r
-install.packages("bookdown")
-# or the development version
-# devtools::install_github("rstudio/bookdown")
+ssh -i /path/my-key-pair.pem my-instance-user-name@my-instance-public-dns-name
 ```
 
-Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
-
-To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
+**Ejemplo**
 
 
+```r
+sudo ssh -i /home/luisca1985/Documentos/Inertia/aws_server/key_pair/inertiasas_aws_key_pair.pem ubuntu@ec2-3-129-68-98.us-east-2.compute.amazonaws.com
+```
 
 <!--chapter:end:index.Rmd-->
 
