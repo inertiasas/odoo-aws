@@ -1,79 +1,3 @@
---- 
-title: "Odoo AWS"
-author: "Luis Camilo Jimenez Alvarez"
-date: "2020-08-07"
-site: bookdown::bookdown_site
-documentclass: book
-bibliography: [book.bib, packages.bib]
-biblio-style: apalike
-link-citations: yes
-description: "Odoo en AWS."
----
-
-# Prerrequisitos
-
-## Amazon Web Service
-
-https://www.youtube.com/watch?v=VdXQTcetr6o
-
-### Crear y activar una cuenta AWS
-https://aws.amazon.com/es/premiumsupport/knowledge-center/create-and-activate-aws-account/
-
-### Lanzar servidor AWS EC2 con Ubuntu 16.04
-https://mobisoftinfotech.com/resources/mguide/launch-aws-ec2-server-set-ubuntu-16-04/
-
-#### Grupos de seguridad
-
-
-```r
-knitr::include_graphics("images/sec_group.png")
-```
-
-<div class="figure">
-<img src="images/sec_group.png" alt="Grupos de seguridad"  />
-<p class="caption">(\#fig:my-fig)Grupos de seguridad</p>
-</div>
-
-### Conexión a la instancia
-
-**Información de la instancia**
-
-https://docs.aws.amazon.com/es_es/AWSEC2/latest/UserGuide/connection-prereqs.html#connection-prereqs-get-info-about-instance
-
-**Conexión a la instancia de Linux mediante un cliente SSH**
-
-https://docs.aws.amazon.com/es_es/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html#AccessingInstancesLinuxSSHClient
-
-
-```r
-ssh -i /path/my-key-pair.pem my-instance-user-name@my-instance-public-dns-name
-```
-
-**Ejemplo**
-
-
-```r
-sudo ssh -i /home/luisca1985/Documentos/Inertia/aws_server/key_pair/inertiasas_aws_key_pair.pem ubuntu@ec2-3-129-68-98.us-east-2.compute.amazonaws.com
-```
-
-## Dominio
-
-https://www.palbin.com/knowledge-base/como-configurar-mi-dominio-en-godaddy/
-
-https://co.godaddy.com/help/configuracion-de-dns-para-tu-dominio-de-cpanel-8852
-
-
-```r
-knitr::include_graphics("images/dns_reg.png")
-```
-
-<div class="figure">
-<img src="images/dns_reg.png" alt="Registros DNS"  />
-<p class="caption">(\#fig:my-fig2)Registros DNS</p>
-</div>
-
-<!--chapter:end:index.Rmd-->
-
 # Instalación {#install}
 
 https://www.vultr.com/docs/installing-odoo-10-community-on-ubuntu-16-04
@@ -84,8 +8,7 @@ https://www.rosehosting.com/blog/how-to-install-odoo-10-on-ubuntu-16-04-with-ngi
 
 ### Abrir la conexión con la instancia
 
-
-```r
+```{r eval=FALSE}
 ssh -i /path/my-key-pair.pem my-instance-user-name@my-instance-public-dns-name
 ```
 
@@ -93,16 +16,14 @@ ssh -i /path/my-key-pair.pem my-instance-user-name@my-instance-public-dns-name
 
 Antes de instalar cualquier paquete en su instancia de Ubuntu, inicie sesión con el usuario `sudo` y actualice.
 
-
-```r
+```{r eval=FALSE}
 sudo apt-get update
 sudo apt-get upgrade
 ```
 
 ### Cerrar la conexión con la instancia
 
-
-```r
+```{r eval=FALSE}
 sudo reboot
 ```
 
@@ -112,13 +33,11 @@ Una vez que el sistema se haya reiniciado, inicie sesión nuevamente como usuari
 
 Ejecute los siguientes comandos como root:
 
-
-```r
+```{r eval=FALSE}
 sudo su
 ```
 
-
-```r
+```{r eval=FALSE}
 wget -O - https://nightly.odoo.com/odoo.key | apt-key add -
 echo "deb http://nightly.odoo.com/10.0/nightly/deb/ ./" >> /etc/apt/sources.list.d/odoo.list
 apt-get update
@@ -128,49 +47,42 @@ apt-get update
 
 https://www.calhoun.io/how-to-install-postgresql-9-5-on-ubuntu-16-04/
 
-
-```r
+```{r eval=FALSE}
 sudo apt-get update
 sudo apt-get install postgresql postgresql-contrib
 ```
 
-
-```r
+```{r eval=FALSE}
 sudo systemctl start postgresql
 sudo systemctl enable postgresql
 ```
 
-
-```r
+```{r eval=FALSE}
 sudo systemctl status odoo
 ```
 
 Se crea un usuario PostgreSQL con los siguientes comandos:
 
-
-```r
+```{r eval=FALSE}
 sudo su - postgres
 createuser odoo -U postgres -dRSP
 ```
 
 Cuando se le solicite, establezca una contraseña segura para el usuario de la base de datos y guárdela en un lugar seguro.
 
-
-```r
+```{r eval=FALSE}
 exit
 ```
 
 ## Instalar Odoo
 
-
-```r
+```{r eval=FALSE}
 sudo apt-get install odoo
 ```
 
 Inicie Odoo y configúrelo para que se inicie automáticamente cuando se inicie el sistema.
 
-
-```r
+```{r eval=FALSE}
 sudo systemctl start odoo
 sudo systemctl enable odoo
 ```
@@ -181,27 +93,23 @@ https://www.youtube.com/watch?v=7bHSUCKt3SE
 
 Puede redirigir el tráfico en el puerto HTTP predeterminado (80) y el puerto HTTPS predeterminado (443) a Odoo (que se ejecuta en el puerto 8069) para que los usuarios ya no tengan que agregar el número de puerto 8069 cada vez que acceden al sistema. 
 
-
-```r
+```{r eval=FALSE}
 sudo apt-get install nginx
 ```
 
 Edite el archivo de configuración del sitio Nginx utilizando un editor de texto, como nano.
 
-
-```r
+```{r eval=FALSE}
 sudo su
 ```
 
-
-```r
+```{r eval=FALSE}
 nano /etc/nginx/sites-available/default
 ```
 
 Encuentra las siguientes líneas.
 
-
-```r
+```{r eval=FALSE}
         location / {
                 # First attempt to serve request as file, then
                 # as directory, then fall back to displaying a 404.
@@ -211,8 +119,7 @@ Encuentra las siguientes líneas.
 
 Y cambialo por los siguiente:
 
-
-```r
+```{r eval=FALSE}
         #location / {
                 # First attempt to serve request as file, then
                 # as directory, then fall back to displaying a 404.
@@ -233,16 +140,14 @@ Y cambialo por los siguiente:
 
 Reinicie Nginx y configúrelo para que se inicie automáticamente cuando se inicie el sistema.
 
-
-```r
+```{r eval=FALSE}
 systemctl restart nginx
 systemctl start nginx
 ```
 
 Ahora puede visitar el sistema Odoo desde el puerto 8069 y el puerto 80.
 
-
-```r
+```{r eval=FALSE}
 http://[your-vultr-instance-IP]:8069
 http://[your-vultr-instance-IP]
 ```
@@ -257,8 +162,7 @@ https://www.youtube.com/watch?v=7bHSUCKt3SE
 
 Agregamos el repositorio y los actualizamos:
 
-
-```r
+```{r eval=FALSE}
 sudo su
 add-apt-repository ppa:certbot/certbot
 apt-get update
@@ -266,36 +170,31 @@ apt-get update
 
 Y luego lo instalamos:
 
-
-```r
+```{r eval=FALSE}
 apt install python-certbot-nginx
 ```
 
 Ajustamos el archico Nginx
 
-
-```r
+```{r eval=FALSE}
 nano /etc/nginx/sites-available/default
 ```
 
 en `server_name` se incluye el dominio
 
-
-```r
+```{r eval=FALSE}
 server_name inertiasas.com www.inertiasas.com;
 ```
 
 Guardamos y reiniciamos el servicio Nginx:
 
-
-```r
+```{r eval=FALSE}
 systemctl restart nginx
 ```
 
 Activamos el firewall ufw:
 
-
-```r
+```{r eval=FALSE}
 ufw allow 'Nginx Full'
 ufw allow 'OpenSSH'
 ufw enable
@@ -303,15 +202,13 @@ ufw enable
 
 Verificamos el estado de ufw:
 
-
-```r
+```{r eval=FALSE}
 ufw status
 ```
 
 Lo cual debe retornar
 
-
-```r
+```{r eval=FALSE}
 To                         Action      From
 --                         ------      ----
 Nginx Full                 ALLOW       Anywhere                  
@@ -322,22 +219,19 @@ OpenSSH (v6)               ALLOW       Anywhere (v6)
 
 Generamos el certificado:
 
-
-```r
+```{r eval=FALSE}
 certbot --nginx -d inertiasas.com -d www.inertiasas.com
 ```
 
 Las respuestas son las siguientes
 
-
-```r
+```{r eval=FALSE}
 Plugins selected: Authenticator nginx, Installer nginx
 Enter email address (used for urgent renewal and security notices) (Enter 'c' to
 cancel): luisca1985@gmail.com
 ```
 
-
-```r
+```{r eval=FALSE}
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Please read the Terms of Service at
 https://letsencrypt.org/documents/LE-SA-v1.2-November-15-2017.pdf. You must
@@ -347,8 +241,7 @@ https://acme-v02.api.letsencrypt.org/directory
 (A)gree/(C)ancel: A
 ```
 
-
-```r
+```{r eval=FALSE}
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Would you be willing to share your email address with the Electronic Frontier
 Foundation, a founding partner of the Let's Encrypt project and the non-profit
@@ -358,8 +251,7 @@ encrypting the web, EFF news, campaigns, and ways to support digital freedom.
 (Y)es/(N)o: N
 ```
 
-
-```r
+```{r eval=FALSE}
 Please choose whether or not to redirect HTTP traffic to HTTPS, removing HTTP access.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 1: No redirect - Make no further changes to the webserver configuration.
@@ -372,8 +264,7 @@ Select the appropriate number [1-2] then [enter] (press 'c' to cancel): 2
 
 El mensaje final es:
 
-
-```r
+```{r eval=FALSE}
 IMPORTANT NOTES:
  - Congratulations! Your certificate and chain have been saved at:
    /etc/letsencrypt/live/inertiasas.com/fullchain.pem
@@ -396,15 +287,9 @@ IMPORTANT NOTES:
 
 ## Resultado de la instalación
 
-
-```r
+```{r my-fig3, fig.cap="Odoo Instalado"}
 knitr::include_graphics("images/odoo_init.png")
 ```
-
-<div class="figure">
-<img src="images/odoo_init.png" alt="Odoo Instalado"  />
-<p class="caption">(\#fig:my-fig3)Odoo Instalado</p>
-</div>
 
 
 
@@ -412,105 +297,18 @@ You can label chapter and section titles using `{#install}` after them, e.g., we
 
 Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
 
-
-```r
+```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
 par(mar = c(4, 4, .1, .1))
 plot(pressure, type = 'b', pch = 19)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="odoo-aws_files/figure-html/nice-fig-1.png" alt="Here is a nice figure!" width="80%" />
-<p class="caption">(\#fig:nice-fig)Here is a nice figure!</p>
-</div>
-
 Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
 
-
-```r
+```{r nice-tab, tidy=FALSE}
 knitr::kable(
   head(iris, 20), caption = 'Here is a nice table!',
   booktabs = TRUE
 )
 ```
 
-
-
-Table: (\#tab:nice-tab)Here is a nice table!
-
-| Sepal.Length| Sepal.Width| Petal.Length| Petal.Width|Species |
-|------------:|-----------:|------------:|-----------:|:-------|
-|          5.1|         3.5|          1.4|         0.2|setosa  |
-|          4.9|         3.0|          1.4|         0.2|setosa  |
-|          4.7|         3.2|          1.3|         0.2|setosa  |
-|          4.6|         3.1|          1.5|         0.2|setosa  |
-|          5.0|         3.6|          1.4|         0.2|setosa  |
-|          5.4|         3.9|          1.7|         0.4|setosa  |
-|          4.6|         3.4|          1.4|         0.3|setosa  |
-|          5.0|         3.4|          1.5|         0.2|setosa  |
-|          4.4|         2.9|          1.4|         0.2|setosa  |
-|          4.9|         3.1|          1.5|         0.1|setosa  |
-|          5.4|         3.7|          1.5|         0.2|setosa  |
-|          4.8|         3.4|          1.6|         0.2|setosa  |
-|          4.8|         3.0|          1.4|         0.1|setosa  |
-|          4.3|         3.0|          1.1|         0.1|setosa  |
-|          5.8|         4.0|          1.2|         0.2|setosa  |
-|          5.7|         4.4|          1.5|         0.4|setosa  |
-|          5.4|         3.9|          1.3|         0.4|setosa  |
-|          5.1|         3.5|          1.4|         0.3|setosa  |
-|          5.7|         3.8|          1.7|         0.3|setosa  |
-|          5.1|         3.8|          1.5|         0.3|setosa  |
-
 You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
-
-<!--chapter:end:01-install.Rmd-->
-
-# Settings
-
-## Configurar Odoo
-
-Ahora puede acceder a Odoo usando su navegador.
-
-
-```r
-https://[your-vultr-instance-IP]
-```
-
-Elija un nombre para la base de datos que creará Odoo, ingrese su dirección de correo electrónico y elija una contraseña para el usuario `admin`. continúe haciendo clic en el botón `Create database`.
-
-Una vez que se haya configurado la base de datos, accederá a la interfaz de usuario de Odoo, donde puede personalizar su sistema Odoo instalando aplicaciones.
-
-<!--chapter:end:02-settings.Rmd-->
-
-# CRM
-
-## Instalación del módulo
-
-<div class="figure">
-<iframe src="https://youtube.com/embed/DiWw0PSy9aI" width="99%" height="400px" style="border: none;"></iframe>
-<p class="caption">(\#fig:embed2)Embedded YouTube video</p>
-</div>
-
-<!--chapter:end:03-crm.Rmd-->
-
-# Applications
-
-Some _significant_ applications are demonstrated in this chapter.
-
-## Example one
-
-## Example two
-
-<!--chapter:end:04-application.Rmd-->
-
-# Final Words
-
-We have finished a nice book.
-
-<!--chapter:end:05-summary.Rmd-->
-
-
-# References {-}
-
-
-<!--chapter:end:06-references.Rmd-->
-

@@ -1,0 +1,13 @@
+# Settings
+
+## Configurar Odoo
+
+Ahora puede acceder a Odoo usando su navegador.
+
+```{r eval=FALSE}
+https://[your-vultr-instance-IP]
+```
+
+Elija un nombre para la base de datos que creará Odoo, ingrese su dirección de correo electrónico y elija una contraseña para el usuario `admin`. continúe haciendo clic en el botón `Create database`.
+
+Una vez que se haya configurado la base de datos, accederá a la interfaz de usuario de Odoo, donde puede personalizar su sistema Odoo instalando aplicaciones.

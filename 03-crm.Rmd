@@ -1,0 +1,7 @@
+# CRM
+
+## Instalación del módulo
+
+```{r embed2, out.extra='style="border: none;"', out.width='99%', fig.cap="Embedded YouTube video", echo = FALSE}
+knitr::include_url('https://youtube.com/embed/DiWw0PSy9aI')
+```

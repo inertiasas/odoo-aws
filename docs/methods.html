@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Methods | Odoo AWS</title>
+  <title>Capítulo 4 Methods | Odoo AWS</title>
   <meta name="description" content="Odoo en AWS." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Methods | Odoo AWS" />
+  <meta property="og:title" content="Capítulo 4 Methods | Odoo AWS" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Methods | Odoo AWS" />
+  <meta name="twitter:title" content="Capítulo 4 Methods | Odoo AWS" />
   
   <meta name="twitter:description" content="Odoo en AWS." />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Luis Camilo Jimenez Alvarez" />
 
 
-<meta name="date" content="2020-08-06" />
+<meta name="date" content="2020-08-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -137,8 +137,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#lanzar-servidor-aws-ec2-con-ubuntu-16.04"><i class="fa fa-check"></i><b>1.1.2</b> Lanzar servidor AWS EC2 con Ubuntu 16.04</a></li>
 <li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#conexión-a-la-instancia"><i class="fa fa-check"></i><b>1.1.3</b> Conexión a la instancia</a></li>
 </ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#dominio"><i class="fa fa-check"></i><b>1.2</b> Dominio</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="install.html"><a href="install.html"><i class="fa fa-check"></i><b>2</b> Instalación</a><ul>
+<li class="chapter" data-level="2.1" data-path="install.html"><a href="install.html#ingresar-actualizar-y-cerrar"><i class="fa fa-check"></i><b>2.1</b> Ingresar, actualizar y cerrar</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="install.html"><a href="install.html#abrir-la-conexión-con-la-instancia"><i class="fa fa-check"></i><b>2.1.1</b> Abrir la conexión con la instancia</a></li>
+<li class="chapter" data-level="2.1.2" data-path="install.html"><a href="install.html#actualizar-el-sistema"><i class="fa fa-check"></i><b>2.1.2</b> Actualizar el sistema</a></li>
+<li class="chapter" data-level="2.1.3" data-path="install.html"><a href="install.html#cerrar-la-conexión-con-la-instancia"><i class="fa fa-check"></i><b>2.1.3</b> Cerrar la conexión con la instancia</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="install.html"><a href="install.html#agregar-el-repositorio-de-paquetes-de-odoo"><i class="fa fa-check"></i><b>2.2</b> Agregar el repositorio de paquetes de Odoo</a></li>
+<li class="chapter" data-level="2.3" data-path="install.html"><a href="install.html#instalación-postgresql-9.5-en-ubuntu-16.04"><i class="fa fa-check"></i><b>2.3</b> Instalación PostgreSQL 9.5 en Ubuntu 16.04</a></li>
+<li class="chapter" data-level="2.4" data-path="install.html"><a href="install.html#instalar-odoo"><i class="fa fa-check"></i><b>2.4</b> Instalar Odoo</a></li>
+<li class="chapter" data-level="2.5" data-path="install.html"><a href="install.html#configurar-odoo"><i class="fa fa-check"></i><b>2.5</b> Configurar Odoo</a></li>
+<li class="chapter" data-level="2.6" data-path="install.html"><a href="install.html#instale-nginx-para-facilitar-el-acceso-del-usuario"><i class="fa fa-check"></i><b>2.6</b> Instale Nginx para facilitar el acceso del usuario</a></li>
+<li class="chapter" data-level="2.7" data-path="install.html"><a href="install.html#certificado-ssl-con-lets-encrypt"><i class="fa fa-check"></i><b>2.7</b> Certificado SSL con Let’s Encrypt</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="install.html"><a href="install.html#instalación-de-lets-encrypt"><i class="fa fa-check"></i><b>2.7.1</b> Instalación de Let’s Encrypt</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="install.html"><a href="install.html#resultado-de-la-instalación"><i class="fa fa-check"></i><b>2.8</b> Resultado de la instalación</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
 <li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
 <li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a><ul>
@@ -165,7 +181,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="methods" class="section level1">
-<h1><span class="header-section-number">Chapter 4</span> Methods</h1>
+<h1><span class="header-section-number">Capítulo 4</span> Methods</h1>
 <p>We describe our methods in this chapter.</p>
 
 </div>
