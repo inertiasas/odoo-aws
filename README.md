@@ -12,6 +12,43 @@ https://www.youtube.com/watch?v=VdXQTcetr6o
 
 https://aws.amazon.com/es/premiumsupport/knowledge-center/create-and-activate-aws-account/
 
+##### 1.1.1.1 Crear cuenta
+
+1. Abra [Amazon Web Services home page](https://aws.amazon.com/)
+2. Elija la opción **Cree una cuenta AWS**
+**Nota:** Si inició la sesión en AWS recientemente, elija **Inicie sesión en la consola **. Si la opción **Cree una cuenta de AWS** no está visible, elija primero **Inicie sesión en una cuenta diferente** y luego elija **Cree una cuenta de AWS**.
+3. Ingrese la información de su cuenta y luego elija **Continuar**. Asegúrese de ingresar la información de su cuenta correctamente, especialmente su dirección de correo electrónico. Si ingresa su dirección de correo electrónico incorrectamente, no podrá acceder a su cuenta.
+   **Importante**: Para las cuentas profesionales de AWS, se recomienda utilizar una lista de distribución de correo electrónico corporativo (es decir, it.admins@example.com) o un buzón de correo electrónico como dirección de correo electrónico. Evite utilizar la dirección de correo electrónico corporativa de una persona (es decir, paulo.santos@example.com). Con esta práctica, su empresa puede conservar el acceso a la cuenta de AWS incluso cuando un empleado cambia de puesto o deja la empresa.
+4. Elija **Personal** o **Profesional**.
+   **Nota:** las cuentas personales y las cuentas profesionales tienen las mismas características y funciones.
+5. Ingrese la información de su empresa o personal.
+   **Importante:** Para las cuentas profesionales de AWS, se recomienda ingresar el número de teléfono de la empresa en lugar de un teléfono celular personal. Configurar una cuenta raíz con una dirección de correo electrónico individual o un número de teléfono personal puede hacer que su cuenta sea insegura.
+6. Lea y acepte el Acuerdo con el cliente de AWS.
+   **Nota:** asegúrese de leer y comprender los términos del [Contrato de cliente de AWS](https://aws.amazon.com/agreement/).
+7. Elija **Crear cuenta y continuar**
+
+Recibirá un correo electrónico para confirmar que se creó su cuenta. Puede iniciar sesión en su nueva cuenta con la dirección de correo electrónico y la contraseña con las que se registró. Sin embargo, no puede utilizar los servicios de AWS hasta que termine de activar su cuenta.
+
+##### 1.1.1.2 Agregar un método de pago
+
+En la página Información de pago, ingrese la información sobre su **método de pago** y luego elija **Verificar y agregar**.
+
+**Nota:** Si desea utilizar una dirección de facturación diferente para su información de facturación de AWS, elija **Usar una nueva dirección** antes de elegir **Verificar y agregar**.
+
+**Importante:** no puede continuar con el proceso de registro hasta que agregue un método de pago válido.
+
+##### 1.1.1.3 Verificar tu número de teléfono
+
+1. Elija su código de país o región de la lista.
+2. Ingrese un número de teléfono al que se le pueda localizar en los próximos minutos.
+3. Ingrese el código que se muestra en el captcha y luego envíelo.
+4. En unos momentos, un sistema automatizado lo contacta.
+5. Ingrese el PIN que recibe y luego elija **Continuar**.
+
+##### 1.1.1.4 Referencias y enlaces
+
+-  [How do I create and activate a new AWS account?](https://aws.amazon.com/es/premiumsupport/knowledge-center/create-and-activate-aws-account/)
+
 #### 1.1.2 Lanzar servidor AWS EC2 con Ubuntu 16.04
 
 https://mobisoftinfotech.com/resources/mguide/launch-aws-ec2-server-set-ubuntu-16-04/
