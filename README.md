@@ -10,8 +10,6 @@ https://www.youtube.com/watch?v=VdXQTcetr6o
 
 #### 1.1.1 Crear y activar una cuenta AWS
 
-https://aws.amazon.com/es/premiumsupport/knowledge-center/create-and-activate-aws-account/
-
 ##### 1.1.1.1 Crear cuenta
 
 1. Abra [Amazon Web Services home page](https://aws.amazon.com/)
