@@ -486,6 +486,45 @@ https://www.youtube.com/watch?v=XxgRcFRqcAE
 - Curso interno de Odoo. Módulo del Sitio web
   - Temas (diseño front end)
 
-### 4.1 Instalación del módulo
-
+### 5.1 Instalación del módulo
 https://www.youtube.com/watch?v=DiWw0PSy9aI
+
+
+
+## 6 Configuración Correo Electrónico
+### 6.1 Aplicación menos seguras
+- Ir a https://myaccount.google.com/lesssecureapps?pli=1
+- Permitir el acceso de aplicaciones poco seguras: true
+### 6.2 Configurar Servidores de Correo Saliente
+#### 6.2.1 Intervalo de tiempo de sincronización
+- Configuración -> Activar Modo Desarrollador
+  - Configuración -> Técnico -> Automatización -> Acciones Planificadas
+    - Fetchmall Service (para 1 minuto)
+      - Número de intervalos: 1
+      - Unidad de intervalo: Minutos
+#### 6.2.2 Configurar Servidores de Correo Entrante
+  - Configuración -> Técnico -> Correo Electrónico -> Servidores de correo entrante -> CREAR
+    - Nombre: mail.inertiasas.com
+    - Tipo servidor: Servidor POP
+    - Servidor y conexión
+      - Información servidor
+        - Nombre del servidor: pop.gmail.com
+        - Nombre del usuario: proyectos@inertiasas.com
+        - Puerto: 995
+        - Contraseña: XXXX
+        - SSL/TLS: true
+### 6.3 Configurar Servidores de Correo Saliente
+  - Configuración -> Técnico -> Correo Electrónico -> Servidores de correo saliente -> CREAR
+    - Descripción: mail.inertiasas.com
+    - Prioridad: 10
+    - Información de la conexión
+      - Servidor SMTP: smtp.gmail.com
+      - Puerto SMTP: 587
+      - Depurando: false
+    - Seguridad y Autenticación
+      - Seguridad de la conexión: TLS (START TLS)
+      - Nombre de usuario: proyectos@inertiasas.com
+      - Contraseña: XXXX
+
+
+https://www.youtube.com/watch?v=IRlakwZRAQE
