@@ -52,6 +52,14 @@ En la página Información de pago, ingrese la información sobre su **método d
 https://mobisoftinfotech.com/resources/mguide/launch-aws-ec2-server-set-ubuntu-16-04/
 
 #####  1.1.2.1 Grupos de seguridad
+###### 1.1.2.1.1 Conexión con el servidor vía SSH
+Incluya la IP correspondiente a su equipo, para dar permisos para acceder al servidor. Ingrese a https://www.cual-es-mi-ip.net/ para consultar su IP pública.
+
+|Tipo|Protocolo|Intervalo de Puertos|   |   |
+|---|---|---|---|---|
+|   |   |   |   |   |
+|   |   |   |   |   |
+|   |   |   |   |   |
 
 ![Alt text](img/sec_group.png)
 
