@@ -130,9 +130,17 @@ Ejecute los siguientes comandos como root:
 sudo su
 ```
 
+Para Odoo 10
 ```
 wget -O - https://nightly.odoo.com/odoo.key | apt-key add -
 echo "deb http://nightly.odoo.com/10.0/nightly/deb/ ./" >> /etc/apt/sources.list.d/odoo.list
+apt-get update
+```
+
+Para Odoo 13
+```
+wget -O - https://nightly.odoo.com/odoo.key | apt-key add -
+echo "eb http://nightly.odoo.com/13.0/nightly/deb/ ./" >> /etc/apt/sources.list.d/odoo.list
 apt-get update
 ```
 
@@ -148,10 +156,6 @@ sudo apt-get install postgresql postgresql-contrib
 ```
 sudo systemctl start postgresql
 sudo systemctl enable postgresql
-```
-
-```
-sudo systemctl status odoo
 ```
 
 Se crea un usuario PostgreSQL con los siguientes comandos:
@@ -178,6 +182,10 @@ Inicie Odoo y configúrelo para que se inicie automáticamente cuando se inicie 
 ```
 sudo systemctl start odoo
 sudo systemctl enable odoo
+```
+
+```
+sudo systemctl status odoo
 ```
 
 ### 2.5 Instale Nginx para facilitar el acceso del usuario
@@ -263,6 +271,12 @@ apt-get update
 
 Y luego lo instalamos:
 
+Para Odoo 10
+```
+apt install python-certbot-nginx
+```
+
+Para Odoo 13
 ```
 apt install python-certbot-nginx
 ```
