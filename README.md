@@ -278,7 +278,7 @@ apt install python-certbot-nginx
 
 Para Odoo 13
 ```
-apt install python-certbot-nginx
+apt install python3-certbot-nginx
 ```
 
 Ajustamos el archico Nginx
