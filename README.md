@@ -140,7 +140,7 @@ apt-get update
 Para Odoo 13
 ```
 wget -O - https://nightly.odoo.com/odoo.key | apt-key add -
-echo "eb http://nightly.odoo.com/13.0/nightly/deb/ ./" >> /etc/apt/sources.list.d/odoo.list
+echo "deb http://nightly.odoo.com/13.0/nightly/deb/ ./" >> /etc/apt/sources.list.d/odoo.list
 apt-get update
 ```
 
