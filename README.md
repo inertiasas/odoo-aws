@@ -55,12 +55,6 @@ https://mobisoftinfotech.com/resources/mguide/launch-aws-ec2-server-set-ubuntu-1
 ###### 1.1.2.1.1 Conexión con el servidor vía SSH
 Incluya la IP correspondiente a su equipo, para dar permisos para acceder al servidor. Ingrese a https://www.cual-es-mi-ip.net/ para consultar su IP pública.
 
-|Tipo|Protocolo|Intervalo de Puertos|   |   |
-|---|---|---|---|---|
-|   |   |   |   |   |
-|   |   |   |   |   |
-|   |   |   |   |   |
-
 ![Alt text](img/sec_group.png)
 
 #### 1.1.3 Conexión a la instancia
@@ -143,6 +137,14 @@ wget -O - https://nightly.odoo.com/odoo.key | apt-key add -
 echo "deb http://nightly.odoo.com/13.0/nightly/deb/ ./" >> /etc/apt/sources.list.d/odoo.list
 apt-get update
 ```
+
+Para Odoo 14
+```
+wget -O - https://nightly.odoo.com/odoo.key | apt-key add -
+echo "deb http://nightly.odoo.com/14.0/nightly/deb/ ./" >> /etc/apt/sources.list.d/odoo.list
+apt-get update
+```
+https://www.odoo.com/documentation/14.0/setup/install.html
 
 ### 2.3 Instalación PostgreSQL 9.5 en Ubuntu 16.04
 
